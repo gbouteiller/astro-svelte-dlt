@@ -9,7 +9,7 @@
     "db:studio": "drizzle-kit studio --verbose",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "db:migrate && astro check && astro build",
+    "build": "pnpm db:migrate && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
