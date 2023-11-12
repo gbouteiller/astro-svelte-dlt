@@ -1,0 +1,20 @@
+---
+import Layout from '$lib/components/layout.astro';
+import Signup from '$lib/components/signup.svelte';
+
+const session = await Astro.locals.auth.validate();
+if (session) return Astro.redirect('/', 302);
+---
+
+<Layout title="Inscription">
+  <section class="flex min-h-screen items-center justify-center">
+    <div class="card card-bordered w-full max-w-md bg-neutral text-neutral-content shadow-md">
+      <div class="card-body items-center text-center">
+        <h1 class="card-title">Inscription</h1>
+        <Signup client:visible />
+        <div class="divider" />
+        <a href="/connexion" hx-boost="true" class="btn btn-accent w-full">Je me connecte</a>
+      </div>
+    </div>
+  </section>
+</Layout>
